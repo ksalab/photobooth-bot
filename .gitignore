@@ -1,0 +1,13 @@
+# Дані та база
+db/
+assets/
+
+# Логи
+*.log
+
+# Окруження та секрети
+.env
+__pycache__/
+venv/
+.venv/
+.vscode/
