@@ -167,8 +167,9 @@ async def cmd_start(message: types.Message):
     )
     logger.info(f"User {message.from_user.id} started the bot")
     await message.answer(
-        "Вітаю!\n\nЯ допоможу за 1 хвилину порахувати потенціал доходу від фотокабінки для вашого закладу.",
+        "ТВітаю!\n\nЯ допоможу за 1 хвилину порахувати потенціал доходу від фотокабінки для вашого закладу.",
         reply_markup=kb,
+        parse_mode="HTML",
     )
 
 
@@ -355,15 +356,16 @@ async def process_final(message: types.Message, state: FSMContext):
         "- проводять час\n"
         "👉 це підсилює атмосферу закладу\n"
         "\n\n"
-        "<b>Дізнатися більше та отримати персональний бонус $300-500 ( до 1.04.2026 )</b>"
+        "<b>Для персональної консультації та отримання бонусу тисніть кнопку нижче 👇</b>"
     )
 
     final_kb = InlineKeyboardMarkup(
         inline_keyboard=[
-            [InlineKeyboardButton(text="Зв’язатися з менеджером", url=MANAGER_URL)],
+            [InlineKeyboardButton(text="Зв’язатися з менеджером ✍️", url=MANAGER_URL)],
             [
                 InlineKeyboardButton(
-                    text="Отримати каталог 📚", callback_data="get_catalog"
+                    text="Ознайомтеся з нашим каталогом фотокабінок 📚",
+                    callback_data="get_catalog",
                 )
             ],
         ]
